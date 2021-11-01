@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -e
+
+APISERVER_ADDRESS="${APISERVER_ADDRESS:-https://127.0.0.1:6443}"
+echo "[INFO] Using API server address - ${APISERVER_ADDRESS}"
+
+until curl -kfsSL ${APISERVER_ADDRESS}/readyz; do
+    sleep 2
+done
