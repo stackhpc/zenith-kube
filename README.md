@@ -19,9 +19,8 @@ Kubernetes CA certificate available to it). This is standard functionality avail
 in all mainstream proxy servers.
 
 When an SSL client certificate is present and successfully verified by the edge proxy,
-the DN from the certificate should be put into a header that is sent to the MITM
-proxy. The MITM proxy will then look for this header and translate the DN into the
-required
+the DN from the certificate is put into a header that is sent to the MITM proxy. The
+MITM proxy will then look for this header and translate the DN into the required
 [authenticating proxy headers](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#authenticating-proxy)
 before forwarding the request to the Kubernetes API server. Requests that do not
 contain this header are forwarded unchanged.

@@ -6,4 +6,4 @@ set -e
 gomplate --file /etc/nginx/nginx.conf --out /var/run/nginx/nginx.conf
 
 # Run Nginx using that configuration file
-nginx -c /var/run/nginx/nginx.conf
+exec nginx -c /var/run/nginx/nginx.conf
